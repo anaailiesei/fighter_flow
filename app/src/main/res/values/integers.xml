@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="participant_id">234</integer>
+    <integer name="one_line">1</integer>
+    <integer name="max_name_length">50</integer>
+    <integer name="max_phone_num_length">11</integer>
+</resources>

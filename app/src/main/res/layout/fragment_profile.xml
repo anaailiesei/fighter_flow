@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_purple"
+    tools:context=".profile.Profile">
+
+    <!--
+        Text box of participant's name in the profile fragment
+        Element isn't important for accessibility
+        TODO: Create gradient one
+    -->
+    <ImageView
+        android:id="@+id/name_box"
+        android:src="@drawable/temnp_bg_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.35" />
+
+    <!--
+        Name is displayed on top of the text box described above
+        Surname is placed on the first row (shown in caps)
+        First and middle name are placed on the next row
+        TODO: Set text programmatically for navigation ffrom search frag too
+    -->
+    <TextView
+        android:id="@+id/participant_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/large_text_size"
+        android:textColor="@color/md_theme_light_onPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_marginStart="@dimen/st_margin"
+        app:layout_constraintTop_toTopOf="@id/name_box"
+        app:layout_constraintStart_toStartOf="@id/name_box"
+        app:layout_constraintBottom_toBottomOf="@id/name_box"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/participant_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/large_text_size"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/md_theme_light_onPrimary"
+        app:layout_constraintTop_toBottomOf="@id/participant_surname"
+        app:layout_constraintStart_toStartOf="@id/participant_surname" />
+
+    <!--
+        Guideline for the placement of participant's id tag
+        TODO: Set constraint percent programmatically (cant be done as resource)
+    -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/id_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <!--
+        Participant's id
+        TODO: Set text programmatically
+    -->
+    <TextView
+        android:id="@+id/participant_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/large_text_size"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/md_theme_light_onPrimary"
+        android:layout_marginStart="@dimen/st_margin"
+        app:layout_constraintTop_toTopOf="@id/participant_surname"
+        app:layout_constraintStart_toStartOf="@id/id_guide" />
+
+    <!--
+        Some card view i might use for later
+        TODO: Add contents / new card views
+    -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sessions_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
+        app:cardBackgroundColor="@color/md_theme_light_onPrimary"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="@dimen/st_radius"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintTop_toBottomOf="@id/name_box"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sessions"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/st_margin"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/medium_text_size"/>
+
+        <TextView
+            android:id="@+id/number_of_sessions_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+7"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/large_text_size"
+            android:fontFamily="@font/roboto_medium"
+            />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/add_button"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adauga"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/sessions_info"
+        app:layout_constraintStart_toStartOf="@id/sessions_info"
+        app:layout_constraintEnd_toEndOf="@id/sessions_info"
+        android:elevation="@dimen/st_elevation"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_phone_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/st_margin"
+        android:layout_marginEnd="@dimen/st_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        app:layout_constraintTop_toBottomOf="@id/add_button">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/participant_phone_box"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="@dimen/st_radius">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/st_margin"
+            android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numar participant"/>
+        <TextView
+            android:id="@+id/participant_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parent_phone_box"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toEndOf="@id/participant_phone_box"
+        android:layout_marginStart="@dimen/st_margin"
+        app:cardCornerRadius="@dimen/st_radius">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/st_margin"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numar parinte"/>
+            <TextView
+                android:id="@+id/parent_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_age_commuter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/st_margin"
+        android:layout_marginEnd="@dimen/st_margin"
+        android:layout_marginTop="@dimen/st_margin"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout_phone_numbers">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/age_box"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="@dimen/st_radius">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/st_margin"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Varsta"/>
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/commuter_box"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toEndOf="@id/participant_phone_box"
+            android:layout_marginStart="@dimen/st_margin"
+            app:cardCornerRadius="@dimen/st_radius">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/st_margin"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Navetist?"/>
+                <TextView
+                    android:id="@+id/commuter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

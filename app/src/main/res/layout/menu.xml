@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <!--
+        Extendable FAB button for menu
+        TODO: add marginBottom 24 dp to dimens
+    -->
+
+    <!-- Closing menu option (displayed after default menu icon is pressed) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:backgroundTint="@color/md_theme_light_onPrimary"
+        android:clickable="true"
+        android:contentDescription="@string/close_menu"
+        android:elevation="@dimen/st_elevation"
+        android:focusable="true"
+        android:scaleX="0"
+        android:scaleY="0"
+        android:src="@drawable/temp_ic_close"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/menu_main"
+        app:layout_constraintEnd_toEndOf="@id/menu_main"
+        app:layout_constraintStart_toStartOf="@id/menu_main"
+        app:layout_constraintTop_toTopOf="@id/menu_main"
+        app:tint="@color/md_theme_light_primary" />
+
+    <!-- Main menu option (default displayed icon)
+    TODO: add margins to dimen-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/st_margin"
+        android:layout_marginBottom="@dimen/st_margin"
+        android:alpha="1"
+        android:backgroundTint="@color/md_theme_light_primary"
+        android:clickable="true"
+        android:contentDescription="@string/main_menu"
+        android:elevation="@dimen/st_elevation"
+        android:focusable="true"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:src="@drawable/temp_ic_main_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/md_theme_light_onPrimary" />
+
+    <!-- Home menu option (displayed after menu option is pressed)-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/st_margin"
+        android:backgroundTint="@color/md_theme_light_primary"
+        android:clickable="false"
+        android:contentDescription="@string/home_menu"
+        android:elevation="@dimen/st_elevation"
+        android:focusable="true"
+        android:src="@drawable/temp_ic_home_menu"
+        android:visibility="invisible"
+        app:fabCustomSize="@dimen/fab_custom_size"
+        app:layout_constraintBottom_toTopOf="@id/menu_close"
+        app:layout_constraintEnd_toEndOf="@id/menu_main"
+        app:layout_constraintStart_toStartOf="@id/menu_close"
+        app:tint="@color/md_theme_light_onPrimary" />
+
+    <!-- Search menu option (displayed after menu option is pressed) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/st_margin"
+        android:backgroundTint="@color/md_theme_light_primary"
+        android:clickable="false"
+        android:contentDescription="@string/participants_list_search"
+        android:elevation="@dimen/st_elevation"
+        android:focusable="true"
+        android:src="@drawable/temp_ic_searcg_menu"
+        android:visibility="invisible"
+        app:fabCustomSize="@dimen/fab_custom_size"
+        app:layout_constraintBottom_toTopOf="@id/menu_home"
+        app:layout_constraintEnd_toEndOf="@id/menu_close"
+        app:layout_constraintStart_toStartOf="@id/menu_close"
+        app:tint="@color/md_theme_light_onPrimary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_add_participant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/st_margin"
+        android:backgroundTint="@color/md_theme_light_primary"
+        android:clickable="false"
+        android:contentDescription="@string/add_participant"
+        android:elevation="@dimen/st_elevation"
+        android:focusable="true"
+        android:src="@drawable/temp_ic_add_person"
+        android:visibility="invisible"
+        app:fabCustomSize="@dimen/fab_custom_size"
+        app:layout_constraintBottom_toTopOf="@id/menu_search"
+        app:layout_constraintEnd_toEndOf="@id/menu_close"
+        app:layout_constraintStart_toStartOf="@id/menu_close"
+        app:tint="@color/md_theme_light_onPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

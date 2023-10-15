@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".add_person.AddParticipant">
+
+    <!-- TODO: add nice photo as background -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_purple"
+        android:importantForAccessibility="no" />
+
+    <!-- TODO: You can safely delete constraint percents as they were set programmatically
+           TODO: Keep them if u want to see the layout in the editor -->
+    <!-- Guideline for info box -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.25"
+        />
+
+    <!-- Container for submitting info-->
+    <!-- TODO: put dimensions into dimen-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/md_theme_light_onPrimary"
+        app:cardCornerRadius="@dimen/st_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/horizontal_guideline"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintWidth_max="@dimen/max_edit_text_width">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/medium_margin">
+
+            <!-- TODO: Maybe some rounded corners for these fields -->
+            <!-- TODO: Do somehthign about text helpers - required, only one phone number and the other fields are required-->
+            <!-- Name field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_field"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:hint="@string/name"
+                app:boxCornerRadiusBottomEnd="@dimen/st_radius"
+                app:boxCornerRadiusBottomStart="@dimen/st_radius"
+                app:boxCornerRadiusTopEnd="@dimen/st_radius"
+                app:boxCornerRadiusTopStart="@dimen/st_radius"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/md_theme_light_primary"
+                app:startIconDrawable="@drawable/ic_name"
+                android:foregroundTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="start"
+                    android:inputType="textCapWords"
+                    android:maxWidth="@dimen/max_edit_text_width"
+                    android:maxLength="@integer/max_name_length"
+                    android:maxLines="@integer/one_line"
+                    android:scrollHorizontally="true"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Birth Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/birth_date_field"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/st_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:hint="@string/birth_date"
+                app:boxCornerRadiusBottomEnd="@dimen/st_radius"
+                app:boxCornerRadiusBottomStart="@dimen/st_radius"
+                app:boxCornerRadiusTopEnd="@dimen/st_radius"
+                app:boxCornerRadiusTopStart="@dimen/st_radius"
+                android:maxWidth="@dimen/max_edit_text_width"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:helperTextTextColor="@color/md_theme_light_primary"
+                app:startIconDrawable="@drawable/ic_birthday">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/birth_date_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:maxLines="@integer/one_line"
+                    tools:ignore="KeyboardInaccessibleWidget,TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/participant_country_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_autoFormatNumber="true"
+                app:ccp_defaultNameCode="RO"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/medium_margin"
+                app:ccpDialog_cornerRadius="@dimen/st_radius"/>
+
+            <!-- Participant's phone number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/participant_phone_number_field"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:hint="@string/participant_phone"
+                app:boxCornerRadiusBottomEnd="@dimen/st_radius"
+                app:boxCornerRadiusBottomStart="@dimen/st_radius"
+                app:boxCornerRadiusTopEnd="@dimen/st_radius"
+                app:boxCornerRadiusTopStart="@dimen/st_radius"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:endIconMode="clear_text"
+                android:maxWidth="@dimen/max_edit_text_width"
+                app:helperTextTextColor="@color/md_theme_light_primary"
+                app:startIconDrawable="@drawable/ic_phone_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/participant_phone_number_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="phone"
+                    android:maxLength="@integer/max_phone_num_length"
+                    android:maxLines="@integer/one_line"
+                    app:startIconDrawable="@string/name"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/parent_country_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ccp_autoFormatNumber="true"
+                app:ccp_defaultNameCode="@string/romania_prefix"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/medium_margin"/>
+
+            <!-- Parents phone number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parent_phone_number_field"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:hint="@string/parent_phone"
+                app:boxCornerRadiusBottomEnd="@dimen/st_radius"
+                app:boxCornerRadiusBottomStart="@dimen/st_radius"
+                app:boxCornerRadiusTopEnd="@dimen/st_radius"
+                app:boxCornerRadiusTopStart="@dimen/st_radius"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:endIconMode="clear_text"
+                android:maxWidth="@dimen/max_edit_text_width"
+                app:helperTextTextColor="@color/md_theme_light_primary"
+                app:startIconDrawable="@drawable/ic_phone_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parent_phone_number_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="phone"
+                    android:maxLength="@integer/max_phone_num_length"
+                    android:maxLines="@integer/one_line"
+                    app:startIconDrawable="@string/name"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- TODO: add a box around this switch-->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/commuter_switch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/st_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:paddingStart="@dimen/st_margin"
+                android:paddingEnd="@dimen/st_margin"
+                android:text="@string/toggle_commuter"
+                tools:ignore="VisualLintButtonSize" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TODO: Don't forget about android:onClick="" and android:transitionName=""-->
+    <!-- Submit button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/info_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/st_margin"
+        android:text="@string/registration"
+        android:textColor="@color/light_grey"
+        android:textStyle="bold"
+        android:textSize="@dimen/large_text_size"
+        app:strokeColor="@color/light_grey"
+        app:strokeWidth="@dimen/button_stroke_width"
+        app:backgroundTint="@color/translucent_grey"
+        app:cornerRadius="@dimen/st_radius"
+        android:enabled="false">
+    </com.google.android.material.button.MaterialButton>
+</androidx.constraintlayout.widget.ConstraintLayout>

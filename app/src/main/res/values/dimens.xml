@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Padding -->
+    <dimen name="small_padding">12dp</dimen>
+    <dimen name="st_padding">16dp</dimen>
+    <dimen name="medium_padding">22dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="st_radius">16dp</dimen>
+    <dimen name="small_radius">8dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="st_elevation">8dp</dimen>
+    <dimen name="small_elevation">2dp</dimen>
+
+    <dimen name="fab_custom_size">45dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="st_margin">16dp</dimen>
+    <dimen name="medium_margin">32dp</dimen>
+    <dimen name="large_margin">64dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="st_text_size">16sp</dimen>
+    <dimen name="medium_text_size">24sp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+    <dimen name="xlarge_text_size">48sp</dimen>
+
+    <dimen name="max_edit_text_width">488dp</dimen>
+    <dimen name="max_button_width">320dp</dimen>
+    <dimen name="button_stroke_width">3dp</dimen>
+    <dimen name="list_item_height">60dp</dimen>
+    <dimen name="name_start_pos_percent">0.4</dimen>
+</resources>

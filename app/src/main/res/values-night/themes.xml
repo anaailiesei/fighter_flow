@@ -1,0 +1,56 @@
+
+<resources>
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_dark_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_dark_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_dark_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_dark_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_dark_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_dark_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_dark_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_dark_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_dark_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_dark_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_dark_error</item>
+        <item name="colorErrorContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_dark_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_dark_background</item>
+        <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
+        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_dark_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_dark_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_dark_outline</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_dark_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
+        <item name="colorCustomColor1">#ffb1c8</item>
+        <item name="colorOnCustomColor1">#650033</item>
+        <item name="colorCustomColor1Container">#8e004a</item>
+        <item name="colorOnCustomColor1Container">#ffd9e2</item>
+        <item name="harmonizeCustomColor1">false</item>
+        <item name="colorCustomColor2">#54df8a</item>
+        <item name="colorOnCustomColor2">#00391b</item>
+        <item name="colorCustomColor2Container">#00522a</item>
+        <item name="colorOnCustomColor2Container">#73fda4</item>
+        <item name="harmonizeCustomColor2">false</item>
+        <item name="colorCustomColor3">#5ad5f9</item>
+        <item name="colorOnCustomColor3">#003642</item>
+        <item name="colorCustomColor3Container">#004e5f</item>
+        <item name="colorOnCustomColor3Container">#b4ebff</item>
+        <item name="harmonizeCustomColor3">false</item>
+        <item name="colorCustomColor4">#e0b7ff</item>
+        <item name="colorOnCustomColor4">#4b027c</item>
+        <item name="colorCustomColor4Container">#632794</item>
+        <item name="colorOnCustomColor4Container">#f1daff</item>
+        <item name="harmonizeCustomColor4">false</item>
+        <item name="colorCustomColor5">#b7c4ff</item>
+        <item name="colorOnCustomColor5">#002681</item>
+        <item name="colorCustomColor5Container">#0039b4</item>
+        <item name="colorOnCustomColor5Container">#dce1ff</item>
+        <item name="harmonizeCustomColor5">false</item>
+        <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
+    </style>
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MainProject</string>
+
+    <!-- Profile Dummy -->
+    <string name="participant_name">Aiiliesei</string>
+    <string name="participant_first_name">Florentina E.</string>
+    <string name="temp_id">#123</string>
+
+    <!-- For accessibility -->
+    <string name="main_menu">Menu</string>
+    <string name="home_menu">Home menu</string>
+    <string name="close_menu">Close menu</string>
+    <string name="participants_list_search">Menu for searching trough participants\' list</string>
+    <string name="add_participant">Menu option for adding a new participant</string>
+
+    <!-- Add participant -->
+    <string name="registration">Înregistrare</string>
+    <string name="name">Nume</string>
+    <string name="required">Obligatoriu</string>
+    <string name="birth_date">Data nașterii</string>
+    <string name="participant_phone">Telefon participant</string>
+    <string name="parent_phone">Telefon părinte</string>
+    <string name="toggle_commuter">Navetist</string>
+    <string name="personal_info">Date personale</string>
+    <string name="contact_info">Date de contact</string>
+    <string name="default_phone_num">723 172 563</string>
+
+    <!-- Errors -->
+    <string name="err_empty_field">Câmpul nu poate fi gol</string>
+    <string name="romania_prefix">RO</string>
+    <string name="sessions">Ședinte</string>
+</resources>
